@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiderCraft Recipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CiderCraft Recipes</h1>
+    </header>
+
+    <section id="recipe-form">
+        <h2>Add a New Recipe</h2>
+        <form id="new-recipe">
+            <input type="text" id="recipe-name" placeholder="Recipe Name" required><br>
+            <textarea id="recipe-ingredients" placeholder="Ingredients" required></textarea><br>
+            <textarea id="recipe-instructions" placeholder="Instructions" required></textarea><br>
+            <button type="submit">Add Recipe</button>
+        </form>
+    </section>
+
+    <section id="recipes">
+        <h2>Recipes</h2>
+        <div id="recipe-list"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
