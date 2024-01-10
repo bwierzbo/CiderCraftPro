@@ -1,45 +1,39 @@
-document.getElementById('new-recipe').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    var name = document.getElementById('recipe-name').value;
-    var ingredients = document.getElementById('recipe-ingredients').value;
-    var instructions = document.getElementById('recipe-instructions').value;
-
-    var recipeDiv = document.createElement('div');
-    recipeDiv.classList.add('recipe');
-
-    var recipeContent = `
-        <h3>${name}</h3>
-        <p><b>Ingredients:</b> ${ingredients}</p>
-        <p><b>Instructions:</b> ${instructions}</p>
-    `;
-
-    recipeDiv.innerHTML = recipeContent;
-    document.getElementById('recipe-list').appendChild(recipeDiv);
-
-    // Clear the form fields
-    document.getElementById('recipe-name').value = '';
-    document.getElementById('recipe-ingredients').value = '';
-    document.getElementById('recipe-instructions').value = '';
-});
-
 document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('loginForm');
-    const recipeForm = document.getElementById('recipeForm');
+    var poolData = {
+        UserPoolId: 'us-east-2_OG0go76Hk', // Your user pool id here
+        ClientId: '208942j9a59pm54ts05hp0n6ji' // Your client id here
+    };
+    var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Here you can add your logic to handle login
-            alert('Login submitted');
-        });
-    }
+    var loginForm = document.getElementById('loginForm');
 
-    if (recipeForm) {
-        recipeForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Here you can add your logic to handle recipe submission
-            alert('Recipe submitted');
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        var authenticationData = {
+            Username: username,
+            Password: password
+        };
+        var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+
+        var userData = {
+            Username: username,
+            Pool: userPool
+        };
+        var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+
+        cognitoUser.authenticateUser(authenticationDetails, {
+            onSuccess: function (result) {
+                console.log('access token + ' + result.getAccessToken().getJwtToken());
+                // Redirect to another page or do something else
+            },
+
+            onFailure: function (err) {
+                alert(err.message || JSON.stringify(err));
+            }
         });
-    }
+    });
 });
