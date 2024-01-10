@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CiderCraft Recipes</title>
+    <title>Login - Cider Recipes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>CiderCraft Recipes</h1>
-    </header>
-
-    <section id="recipe-form">
-        <h2>Add a New Recipe</h2>
-        <form id="new-recipe">
-            <input type="text" id="recipe-name" placeholder="Recipe Name" required><br>
-            <textarea id="recipe-ingredients" placeholder="Ingredients" required></textarea><br>
-            <textarea id="recipe-instructions" placeholder="Instructions" required></textarea><br>
-            <button type="submit">Add Recipe</button>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/path/to/login" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-    </section>
+    </div>
 
-    <section id="recipes">
-        <h2>Recipes</h2>
-        <div id="recipe-list"></div>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
-
