@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cognitoUser.authenticateUser(authenticationDetails, {
             onSuccess: function (result) {
                 console.log('access token + ' + result.getAccessToken().getJwtToken());
-                // Redirect to another page or do something else
+                window.location.href='recipes.html';
             },
 
             onFailure: function (err) {
