@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifydaf062ccba454-staging-234128-authRole",
+      "UnauthRoleArn": "arn:aws:iam::508417564420:role/amplify-amplifydaf062ccba454-staging-234128-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::508417564420:role/amplify-amplifydaf062ccba454-staging-234128-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplifydaf062ccba454-staging-234128-deployment",
+      "UnauthRoleName": "amplify-amplifydaf062ccba454-staging-234128-unauthRole",
+      "StackName": "amplify-amplifydaf062ccba454-staging-234128",
+      "StackId": "arn:aws:cloudformation:us-east-2:508417564420:stack/amplify-amplifydaf062ccba454-staging-234128/c6791260-b011-11ee-a7d1-062e0929acf3",
+      "AmplifyAppId": "d2y3k94ffetlzk"
+    },
+    "categories": {
+      "auth": {
+        "CiderCraftPro": {}
+      }
+    }
+  }
+}
