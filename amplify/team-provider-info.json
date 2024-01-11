@@ -17,6 +17,12 @@
       },
       "api": {
         "cidercraftpro": {}
+      },
+      "interactions": {
+        "steve": {
+          "deploymentBucketName": "amplify-amplifydaf062ccba454-staging-234128-deployment",
+          "s3Key": "amplify-builds/steve-4443334d38727176784c-build.zip"
+        }
       }
     }
   }

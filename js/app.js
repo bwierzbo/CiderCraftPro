@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href= '/recipes.html';
         } catch (error) {
             console.error('Error signing in', error);
-            alert('Error signing in');
+            alert('Error signing in: ${error.message}');
         }
     });
 });

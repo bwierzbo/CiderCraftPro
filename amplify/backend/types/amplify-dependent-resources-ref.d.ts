@@ -16,5 +16,12 @@ export type AmplifyDependentResourcesAttributes = {
       "UserPoolId": "string",
       "UserPoolName": "string"
     }
+  },
+  "interactions": {
+    "steve": {
+      "BotName": "string",
+      "FunctionArn": "string",
+      "Region": "string"
+    }
   }
 }

@@ -47,5 +47,30 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "interactions": {
+    "steve": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lex"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_interactions_steve_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "interactions",
+          "resourceName": "steve"
+        }
+      ]
+    },
+    "AMPLIFY_interactions_steve_s3Key": {
+      "usedBy": [
+        {
+          "category": "interactions",
+          "resourceName": "steve"
+        }
+      ]
+    }
   }
 }
